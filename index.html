@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sudharshana Balbel Ravi</title>
+<meta name="description" content="Customer Success & Program Management professional with 7+ years managing enterprise clients, Diploma in Data Science (IIT Madras), and builder of a production-tracking web app for a garment exporter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Sudharshana B. R.</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li class="hide-sm"><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Customer Success · Program Management · Data Science</div>
+    <h1>Sudharshana Balbel Ravi</h1>
+    <p class="lede">I spend my time with enterprise clients: getting them onboarded, delivering what they need and keeping them through renewal. I've done this for 7+ years across SaaS, EdTech and pharma IT. I also build things. I have a Diploma in Data Science from IIT Madras, and I designed and built a production-tracking web app for a garment exporter.</p>
+    <div class="btns">
+      <a class="btn primary" href="production-app.html">Read the production app case study</a>
+      <a class="btn" href="https://linkedin.com/in/sudharshana-balbel-ravi">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>7+</b><span>years with enterprise clients</span></div>
+      <div class="stat"><b>5</b><span>major enterprise accounts owned</span></div>
+      <div class="stat"><b>100%</b><span>project renewal rate</span></div>
+      <div class="stat"><b>100K+</b><span>hackathon participants</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Featured project</div>
+      <h2>Production tracking app for a garment exporter</h2>
+      <p>I took the factory's spreadsheet-based tracking from cutting to packing and turned it into a web app built around each person's role. I gathered the requirements, designed it, built it and handled delivery myself.</p>
+    </div>
+    <div class="feature">
+      <div>
+        <span class="tag">Next.js · TypeScript</span><span class="tag">Supabase / Postgres</span><span class="tag">Row-Level Security</span><span class="tag warm">$0/month hosting</span>
+        <ul class="ticks" style="margin-top:14px">
+          <li>Tracks every order by PO, then style, then variant (gender, colour, size, print) through cutting, tie-dye, sewing, printing/embroidery, checking, ironing and packing</li>
+          <li>Five roles, from owner to the person in charge of each stage, each with access to exactly what they need. Saved numbers can only be corrected by the owner, and every change is logged</li>
+          <li>Tracks numbered cartons that mix styles and sizes, plus work sent to outside vendors with good, rejected and shortage counts on return</li>
+          <li>Analytics show output for today, this week and in total for each PO. Every tab exports to Excel</li>
+        </ul>
+        <a class="btn primary" href="production-app.html">Full case study →</a>
+      </div>
+      <div class="flow" style="margin:0">
+        <svg class="compact" viewBox="0 0 360 230" role="img" aria-label="Order flow from PO to packed cartons">
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="currentColor" style="color:var(--muted)"/></marker></defs>
+          <rect class="box" x="10" y="10" width="100" height="40" rx="8"/><text x="60" y="35" text-anchor="middle">PO</text>
+          <rect class="box" x="130" y="10" width="100" height="40" rx="8"/><text x="180" y="35" text-anchor="middle">Style</text>
+          <rect class="box" x="250" y="10" width="100" height="40" rx="8"/><text x="300" y="35" text-anchor="middle">Variant</text>
+          <path class="arrow" d="M110 30H128" marker-end="url(#ah)"/><path class="arrow" d="M230 30H248" marker-end="url(#ah)"/>
+          <text class="lbl" x="180" y="72" text-anchor="middle">daily entry per stage, in the order set for each style</text>
+          <rect class="box" x="10" y="85" width="80" height="34" rx="8"/><text x="50" y="106" text-anchor="middle">Cutting</text>
+          <rect class="box out" x="100" y="85" width="80" height="34" rx="8"/><text x="140" y="106" text-anchor="middle">Tie-Dye</text>
+          <rect class="box" x="190" y="85" width="80" height="34" rx="8"/><text x="230" y="106" text-anchor="middle">Sewing</text>
+          <rect class="box" x="280" y="85" width="70" height="34" rx="8"/><text x="315" y="106" text-anchor="middle">Print</text>
+          <rect class="box" x="10" y="140" width="80" height="34" rx="8"/><text x="50" y="161" text-anchor="middle">Checking</text>
+          <rect class="box" x="100" y="140" width="80" height="34" rx="8"/><text x="140" y="161" text-anchor="middle">Ironing</text>
+          <rect class="box" x="190" y="140" width="160" height="34" rx="8"/><text x="270" y="161" text-anchor="middle">Packing → Cartons</text>
+          <path class="arrow" d="M90 102H98"/><path class="arrow" d="M180 102H188"/><path class="arrow" d="M270 102H278"/>
+          <path class="arrow" d="M90 157H98"/><path class="arrow" d="M180 157H188"/>
+          <rect class="box out" x="10" y="200" width="16" height="16" rx="4"/><text class="lbl" x="34" y="212">can go to outside vendors</text>
+          <rect class="box" x="190" y="200" width="16" height="16" rx="4"/><text class="lbl" x="214" y="212">in-house units</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="cards" style="margin-top:20px">
+      <div class="card">
+        <div class="meta">IIT Madras capstone · 2026 · Python, Excel</div>
+        <h3>Profitability analysis of a retail ice cream outlet</h3>
+        <p>I analysed bill-level and item-level sales from a live business using time-series, ABC and correlation analysis. Sales were strongly seasonal, most revenue came from a few products, and discounting made little difference.</p>
+      </div>
+      <div class="card">
+        <div class="meta">Kaggle · 2026 · XGBoost, LightGBM, CatBoost</div>
+        <h3>Heavy equipment auction price prediction</h3>
+        <p>An ensemble of three gradient-boosting models, each weighted by the inverse of its RMSLE. I validated it with 5-fold cross-validation and improved it through repeated rounds of feature engineering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Experience</div><h2>Where I've worked</h2></div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-head"><h3>Customer Success Consultant · Expolinks</h3><span class="tl-date">Mar 2024 – Present</span></div>
+        <div class="tl-sub">Part-time, remote · Garment export business, Tiruppur</div>
+        <ul>
+          <li>Main point of contact for international customers in the US, UK, Jamaica, Fiji and UAE, from requirements through order execution</li>
+          <li>Coordinate with production teams so orders go out on time</li>
+          <li>Built an Excel production-tracking workbook, then a full production web app (<a href="production-app.html">case study</a>)</li>
+          <li>Built stronger customer relationships that led to repeat business, and found and engaged new leads</li>
+        </ul>
+      </div>
+      <div class="tl-item break">
+        <div class="tl-head"><h3>Career break</h3><span class="tl-date">Mar 2023 – Feb 2024</span></div>
+        <div class="tl-sub">Maternity break</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-head"><h3>Customer Success Engineer · iamneo.ai (formerly Examly)</h3><span class="tl-date">Oct 2021 – Mar 2023</span></div>
+        <div class="tl-sub">Promoted from Program Manager · Coimbatore · EdTech SaaS (NeoCoder LMS)</div>
+        <ul>
+          <li>Owned a portfolio of five enterprise accounts: Virtusa, LTIMindtree, Hexaware, LatentView and NASSCOM</li>
+          <li>Every project I handled renewed (100%), and strong delivery won additional projects from LTIMindtree</li>
+          <li>Ran large corporate upskilling and hiring programmes end to end, from onboarding to closure</li>
+          <li>Led international hackathons with Virtusa and NASSCOM that drew 100,000+ registrations</li>
+          <li>Neo Shining Star award (2022) for best customer engagement and retention</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-head"><h3>Senior Research Analyst · Zifo RnD Solutions</h3><span class="tl-date">Sep 2017 – Feb 2021</span></div>
+        <div class="tl-sub">Promoted from Associate Analyst · Chennai · Pharma-IT managed services</div>
+        <ul>
+          <li>Supported global pharma clients, including AbbVie and Roche, in customer-facing application support and delivery</li>
+          <li>Owned managed services for the Pristima application on my own for over two years</li>
+          <li>Liaised between clients and the Pristima and IDBS E-WorkBook product teams in GxP-compliant environments, and used SQL for integration work</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-head"><h3>Intern · Novozymes India</h3><span class="tl-date">2016 – 2017</span></div>
+        <div class="tl-sub">Protein mutation analysis and enzyme optimisation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Skills</div><h2>What I bring</h2></div>
+    <div class="skills">
+      <div class="card"><h3>Customer success</h3><p>Customer lifecycle from onboarding to retention · Renewals and account expansion · Enterprise stakeholder management · Programme delivery · Root cause analysis · Process improvement · Risk assessment</p></div>
+      <div class="card"><h3>Data &amp; building</h3><p>Python (pandas) · SQL / Postgres · Statistics · ML (XGBoost, LightGBM, CatBoost) · FastAPI · Next.js / TypeScript · Supabase · Git / GitHub · Excel (SUMIFS, dashboards)</p></div>
+      <div class="card"><h3>Tools &amp; domain</h3><p>Jira · ServiceNow · Zoho Desk · CRM and ITSM · IDBS E-WorkBook · Pristima · SaaS, EdTech and LMS · Pharma IT · GxP · ITIL</p></div>
+    </div>
+
+    <div class="section-head" style="margin-top:44px"><div class="eyebrow">Education</div></div>
+    <div class="edu">
+      <div class="card"><div class="meta">2024 – 2026 · CGPA 7.68</div><h3>Diploma in Data Science</h3><p>IIT Madras, BS in Data Science &amp; Applications programme</p></div>
+      <div class="card"><div class="meta">2015 – 2017 · CGPA 9.14</div><h3>M.Sc. Biotechnology</h3><p>SASTRA University, University First Rank, with Distinction</p></div>
+      <div class="card"><div class="meta">2012 – 2015 · Third Rank</div><h3>B.Sc. Biotechnology</h3><p>PSG College of Arts and Science, Student Head of the Biotechnology Association</p></div>
+    </div>
+    <p style="color:var(--muted);margin-top:18px">Languages: English (professional), Tamil, Malayalam, Tulu</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p class="lede">I'm looking for full-time Customer Success or Program Management roles, remote or in Coimbatore, and I can start immediately.</p>
+    <div class="contact">
+      <a class="btn primary" href="mailto:sudharshana.ravi@outlook.com">sudharshana.ravi@outlook.com</a>
+      <a class="btn" href="https://linkedin.com/in/sudharshana-balbel-ravi">LinkedIn</a>
+      <a class="btn" href="https://github.com/SudharshanaBalbelRavu">GitHub</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
