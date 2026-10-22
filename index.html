@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -71,7 +71,7 @@
         <div class="num">02</div>
         <h3>Instrument &amp; measure</h3>
         <p>I build the tracking first, whether that's a structured dataset, a dashboard or an app, so decisions aren't based on anecdotes.</p>
-        <p class="proof"><b>In practice:</b> A SUMIFS-driven Excel workbook, then a Postgres-backed app with analytics for today, this week and in total.</p>
+        <p class="proof"><b>In practice:</b> I moved a factory from manual spreadsheet updates to live output figures for today, this week and in total.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
@@ -93,40 +93,32 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Featured project</div>
-      <h2>Production tracking app for a garment exporter</h2>
-      <p>I turned the factory's spreadsheet-based tracking, from cutting to packing, into a web app built around each person's role. I gathered the requirements, designed it, built it and handled delivery myself.</p>
+      <h2>Real-time production visibility for a garment exporter</h2>
+      <p>The owner of an export factory couldn't see where his orders stood without chasing people and reconciling a spreadsheet. I worked with him to define what the business needed to know each day, then used AI to build an app that answers those questions live.</p>
     </div>
     <div class="feature">
       <div>
-        <span class="tag">Next.js · TypeScript</span><span class="tag">Supabase / Postgres</span><span class="tag">Row-Level Security</span><span class="tag warm">$0/month hosting</span>
-        <ul class="ticks" style="margin-top:14px">
-          <li>Tracks every order by PO, then style, then variant (gender, colour, size, print) through cutting, tie-dye, sewing, printing/embroidery, checking, ironing and packing</li>
-          <li>Five roles, from owner to the person in charge of each stage, each with access to exactly what they need. Saved numbers can only be corrected by the owner, and every change is logged</li>
-          <li>Tracks numbered cartons that mix styles and sizes, plus work sent to outside vendors with good, rejected and shortage counts on return</li>
-          <li>Analytics show output for today, this week and in total for each PO. Every tab exports to Excel</li>
+        <h3>What it means for the business</h3>
+        <ul class="ticks" style="margin-top:12px">
+          <li><b>One live view</b> of every order's progress, so status no longer depends on chasing people</li>
+          <li><b>Losses caught at the stage they happen</b>, while there's still time to protect the delivery date</li>
+          <li><b>Control over outsourced work</b>: who has the goods, and what came back good, rejected or short</li>
+          <li><b>Numbers the owner can trust</b>: only he can correct a figure, and every change is recorded</li>
+          <li><b>$0 running cost</b>, and everything exports to Excel, which the team already uses</li>
         </ul>
         <a class="btn primary" href="production-app.html">Read the case study →</a>
       </div>
-      <div class="flow" style="margin:0">
-        <svg class="compact" viewBox="0 0 360 230" role="img" aria-label="Order flow from PO to packed cartons">
-          <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#8a93a3"/></marker></defs>
-          <rect class="box" x="10" y="10" width="100" height="40" rx="8"/><text x="60" y="35" text-anchor="middle">PO</text>
-          <rect class="box" x="130" y="10" width="100" height="40" rx="8"/><text x="180" y="35" text-anchor="middle">Style</text>
-          <rect class="box" x="250" y="10" width="100" height="40" rx="8"/><text x="300" y="35" text-anchor="middle">Variant</text>
-          <path class="arrow" d="M110 30H128" marker-end="url(#ah)"/><path class="arrow" d="M230 30H248" marker-end="url(#ah)"/>
-          <text class="lbl" x="180" y="72" text-anchor="middle">daily entry per stage, in the order set for each style</text>
-          <rect class="box" x="10" y="85" width="80" height="34" rx="8"/><text x="50" y="106" text-anchor="middle">Cutting</text>
-          <rect class="box out" x="100" y="85" width="80" height="34" rx="8"/><text x="140" y="106" text-anchor="middle">Tie-Dye</text>
-          <rect class="box" x="190" y="85" width="80" height="34" rx="8"/><text x="230" y="106" text-anchor="middle">Sewing</text>
-          <rect class="box" x="280" y="85" width="70" height="34" rx="8"/><text x="315" y="106" text-anchor="middle">Print</text>
-          <rect class="box" x="10" y="140" width="80" height="34" rx="8"/><text x="50" y="161" text-anchor="middle">Checking</text>
-          <rect class="box" x="100" y="140" width="80" height="34" rx="8"/><text x="140" y="161" text-anchor="middle">Ironing</text>
-          <rect class="box" x="190" y="140" width="160" height="34" rx="8"/><text x="270" y="161" text-anchor="middle">Packing → Cartons</text>
-          <path class="arrow" d="M90 102H98"/><path class="arrow" d="M180 102H188"/><path class="arrow" d="M270 102H278"/>
-          <path class="arrow" d="M90 157H98"/><path class="arrow" d="M180 157H188"/>
-          <rect class="box out" x="10" y="200" width="16" height="16" rx="4"/><text class="lbl" x="34" y="212">can go to outside vendors</text>
-          <rect class="box" x="190" y="200" width="16" height="16" rx="4"/><text class="lbl" x="214" y="212">in-house units</text>
-        </svg>
+      <div>
+        <div class="card" style="height:100%">
+          <div class="eyebrow">My role</div>
+          <ul class="ticks">
+            <li>Ran it like a customer engagement, with the owner and the CEO as my customers</li>
+            <li>Turned business questions into clear rules and metrics</li>
+            <li>Got non-technical stakeholders to sign off using plain-language decision documents</li>
+            <li>Shipped leadership feedback within days of the demo</li>
+          </ul>
+          <span class="tag warm">Built using AI (Claude)</span><span class="tag">In client testing</span>
+        </div>
       </div>
     </div>
 
@@ -156,7 +148,7 @@
         <ul>
           <li>Main point of contact for international customers in the US, UK, Jamaica, Fiji and UAE, from requirements through order execution</li>
           <li>Coordinate with production teams so orders go out on time</li>
-          <li>Built an Excel production-tracking workbook, then a full production web app (<a href="production-app.html">case study</a>)</li>
+          <li>Gave the owner real-time visibility of production with an Excel tracker and then an app built using AI (<a href="production-app.html">case study</a>)</li>
           <li>Built stronger customer relationships that led to repeat business, and found and engaged new leads</li>
         </ul>
       </div>

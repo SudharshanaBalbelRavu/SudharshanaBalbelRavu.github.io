@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Production Tracking App</title>
-<meta name="description" content="Case study: a role-based production-tracking web app for a garment export manufacturer, from cutting to packing.">
+<title>Production Visibility Case Study</title>
+<meta name="description" content="Case study: giving a garment exporter's owner real-time visibility and control of production, from cutting to packing, with an app built using AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -27,12 +27,12 @@
   <div class="wrap">
     <a class="back" href="index.html#work">← Back to portfolio</a>
     <div class="eyebrow" style="margin-top:18px">Case study · 2026</div>
-    <h1>From a status spreadsheet to a production app</h1>
-    <p class="lede">A garment export manufacturer was tracking every order through a shared Excel status file. I built a web app around each person's role to replace it. It covers every stage from cutting to packed cartons, including work sent to outside vendors.</p>
+    <h1>Giving a factory owner real-time control of production</h1>
+    <p class="lede">A garment export manufacturer couldn't see where its orders really stood until someone reconciled a spreadsheet by hand. I worked with the owner to understand what the business needed to know each day. Then I used AI to build an app that gives him that answer live, at no running cost.</p>
     <div class="facts">
-      <div><small>My role</small>Requirements, design, build, delivery</div>
-      <div><small>Users</small>5 roles, ~8 people</div>
-      <div><small>Stack</small>Next.js · Supabase</div>
+      <div><small>Client</small>Garment export manufacturer</div>
+      <div><small>Who benefits</small>Owner, merchandiser and floor leads</div>
+      <div><small>How it was built</small>AI-assisted development</div>
       <div><small>Running cost</small>$0 / month</div>
     </div>
   </div>
@@ -40,113 +40,60 @@
 
 <section>
   <div class="wrap prose">
-    <h2>The problem</h2>
-    <p>Production for each purchase order (PO) passes through up to seven stages, and the order differs from style to style. The team tracked it all in one Excel status file. That caused four recurring problems:</p>
+    <h2>The business problem</h2>
+    <p>The owner is responsible for delivering export orders to international buyers on time and in full. Production status lived in a shared Excel file, which left him with five problems:</p>
     <ul class="ticks">
-      <li><b>Losses showed up late.</b> Pieces lost between stages only came to light when someone reconciled the sheet by hand.</li>
-      <li><b>Cartons couldn't be tracked properly.</b> A single carton often holds several styles and sizes, and a flat sheet can't record that.</li>
-      <li><b>Outside work was invisible.</b> Nobody could easily see what had gone to outside dyeing or ironing units, when it went, or how much came back good.</li>
-      <li><b>Anyone could overwrite a number.</b> There was no record of who changed what.</li>
+      <li><b>No live view.</b> To find out where an order stood, someone had to make calls or reconcile the sheet.</li>
+      <li><b>Losses found too late.</b> Pieces lost or rejected between stages often surfaced only near shipment, when it was hardest to recover.</li>
+      <li><b>Outsourced work out of sight.</b> Goods sent to outside dyeing or ironing units were hard to follow up on.</li>
+      <li><b>Numbers couldn't be trusted.</b> Anyone could overwrite a figure, and there was no record of who changed it.</li>
+      <li><b>Packing details pieced together by hand.</b> Carton-by-carton contents for the buyer had to be assembled manually.</li>
     </ul>
-    <p>I started by building a stronger Excel workbook, with separate planner and floor-manager views, SUMIFS dashboards and flags for stage-to-stage losses. It helped, but the business needed proper multi-user access and real control over who can enter and edit what. That needed an app.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap prose">
-    <h2>How I ran it</h2>
-    <p>I ran the project the way I'd run a customer engagement. The owner and the CEO were the customer, and nothing got built until they had signed off on it.</p>
-    <ul class="ticks">
-      <li><b>Discovery.</b> I took the stage logic and the wastage rules from the existing status file and checked them against how the floor actually works.</li>
-      <li><b>Decision documents.</b> I wrote requirements in plain language with tick-box options, recommended a choice for each, and listed open questions, so the owner could decide without any technical background.</li>
-      <li><b>Prototype first.</b> The owner approved a clickable prototype, and then I built the real app step by step.</li>
-      <li><b>Short feedback loops.</b> After the leadership demo, I shipped the requested changes as database migrations within days. These included renaming a stage, adding Tie-Dye, restricting who can see packing, adding Excel export on every tab, and later supporting in-house units and outsourcing.</li>
-    </ul>
-    <div class="callout">The scope changed partway through. The original plan covered the full chain from yarn to fabric. Once it was clear the biggest pain was on the production floor, we narrowed it to cutting through packing. The yarn-to-fabric module is parked for a later phase.</div>
+    <p>Together, these put delivery dates, margins and buyer confidence at risk.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <div class="prose">
-      <h2>What the app does</h2>
-      <p>Each PO works like a project. It starts as a draft, goes active, and is closed when the order is done. Inside a PO are styles, and inside each style are variants for each combination of gender, colour, size and print design.</p>
-    </div>
-    <div class="flow">
-      <svg viewBox="0 0 900 260" role="img" aria-label="Data and process flow of the production app">
-        <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#8a93a3"/></marker></defs>
-        <text class="lbl" x="20" y="22">ORDER STRUCTURE</text>
-        <rect class="box" x="20" y="34" width="150" height="44" rx="8"/><text x="95" y="61" text-anchor="middle">PO (draft → active → closed)</text>
-        <rect class="box" x="200" y="34" width="120" height="44" rx="8"/><text x="260" y="61" text-anchor="middle">Style</text>
-        <rect class="box" x="350" y="34" width="220" height="44" rx="8"/><text x="460" y="61" text-anchor="middle">Variant: gender · colour · size · print</text>
-        <path class="arrow" d="M170 56H198" marker-end="url(#a2)"/><path class="arrow" d="M320 56H348" marker-end="url(#a2)"/>
-        <text class="lbl" x="20" y="118">PRODUCTION ROUTE (set for each style; cutting first, packing last)</text>
-        <rect class="box" x="20" y="130" width="96" height="40" rx="8"/><text x="68" y="155" text-anchor="middle">Cutting</text>
-        <rect class="box out" x="130" y="130" width="96" height="40" rx="8"/><text x="178" y="155" text-anchor="middle">Tie-Dye</text>
-        <rect class="box" x="240" y="130" width="96" height="40" rx="8"/><text x="288" y="155" text-anchor="middle">Sewing</text>
-        <rect class="box" x="350" y="130" width="130" height="40" rx="8"/><text x="415" y="155" text-anchor="middle">Print / Embroidery</text>
-        <rect class="box" x="494" y="130" width="96" height="40" rx="8"/><text x="542" y="155" text-anchor="middle">Checking</text>
-        <rect class="box" x="604" y="130" width="96" height="40" rx="8"/><text x="652" y="155" text-anchor="middle">Ironing</text>
-        <rect class="box" x="714" y="130" width="166" height="40" rx="8"/><text x="797" y="155" text-anchor="middle">Packing → numbered cartons</text>
-        <path class="arrow" d="M116 150H128" marker-end="url(#a2)"/><path class="arrow" d="M226 150H238" marker-end="url(#a2)"/><path class="arrow" d="M336 150H348" marker-end="url(#a2)"/><path class="arrow" d="M480 150H492" marker-end="url(#a2)"/><path class="arrow" d="M590 150H602" marker-end="url(#a2)"/><path class="arrow" d="M700 150H712" marker-end="url(#a2)"/>
-        <rect class="box out" x="20" y="200" width="18" height="18" rx="4"/><text class="lbl" x="46" y="213">Any stage can be split between in-house units (0/1/2) and outside vendors. Tie-Dye is always outsourced.</text>
-        <text class="lbl" x="20" y="240">Every stage records: received from previous stage · done today · rejected today · done so far · still to do</text>
-      </svg>
+      <h2>What changes for the owner and the business</h2>
     </div>
     <div class="cards">
-      <div class="card"><h3>Daily entry grid</h3><p>Each stage lead enters the day's numbers in a spreadsheet-style grid, filtered by buyer and PO. Running totals and the balance still to do are calculated automatically, never typed in by hand.</p></div>
-      <div class="card"><h3>Mixed-style cartons</h3><p>Cartons are numbered within each PO and can hold several styles and sizes. Style details carry over from the previous stage and can be edited. A carton can be changed while it's open and is final once sealed. Only the owner can reopen it.</p></div>
-      <div class="card"><h3>Outsourcing</h3><p>Work sent out records the vendor (picked from a saved list), the date sent and the date returned. Returns are logged as good, rejected or short, so outside work is tracked just like in-house production.</p></div>
-      <div class="card"><h3>Analytics &amp; export</h3><p>Shows output for today, this week and in total for each PO, with filters, alongside a status board. Every tab exports to Excel, because that's the format the business already works in.</p></div>
+      <div class="card"><h3>One live view of every order</h3><p>Output today, this week and in total for each PO and each stage, in one place. The owner sees status without having to chase anyone.</p></div>
+      <div class="card"><h3>Losses caught where they happen</h3><p>Rejections and shortfalls show up at the stage they occur. The team can act while there's still time to recover the quantity.</p></div>
+      <div class="card"><h3>Control over outsourced work</h3><p>Every batch sent to an outside unit is tracked: who has it, when it went out, and how much came back good, rejected or short.</p></div>
+      <div class="card"><h3>Numbers the owner can trust</h3><p>Each person enters only their own stage. Only the owner can correct a figure, and every correction is recorded.</p></div>
+      <div class="card"><h3>Buyer-ready packing information</h3><p>Numbered cartons record exactly which styles and sizes are inside, so packing lists don't have to be rebuilt by hand.</p></div>
+      <div class="card"><h3>Fits how the business already works</h3><p>Everything exports to Excel, which the team already uses. Hosting costs nothing, so there's no new overhead.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap prose">
-    <h2>Roles and controls</h2>
-    <div class="table-wrap">
-      <table>
-        <tr><th>Role</th><th>Can do</th><th>Can't do</th></tr>
-        <tr><td>Owner</td><td>See and edit everything, correct saved numbers, delete wrong entries, close or reopen POs</td><td>Nothing is off limits, and every change is logged</td></tr>
-        <tr><td>Merchandiser</td><td>Create POs, styles and variants, record outsourcing, see everything</td><td>Edit or delete saved data</td></tr>
-        <tr><td>Cutting lead</td><td>Enter cutting figures</td><td>See other stages' entry screens, edit or delete</td></tr>
-        <tr><td>Production lead</td><td>Enter sewing, printing/embroidery, checking and ironing figures</td><td>Edit or delete; see packing</td></tr>
-        <tr><td>Packing lead</td><td>Fill and seal cartons</td><td>Edit or delete sealed data</td></tr>
-      </table>
-    </div>
-    <p>These rules are enforced in the database itself through Postgres Row-Level Security, not just hidden in the interface. Closing a PO before its full quantity is produced requires a reason. Corrections can only be made by the owner, and each one goes into an audit log. Every line item has its own comment thread, so questions stay attached to the data they're about.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap prose">
-    <h2>Technical choices</h2>
-    <div class="table-wrap">
-      <table>
-        <tr><th>Layer</th><th>Choice</th><th>Why</th></tr>
-        <tr><td>App</td><td>Next.js + TypeScript, installable as a PWA</td><td>Works like a desktop app on the factory PCs, with no installer to manage</td></tr>
-        <tr><td>Data &amp; auth</td><td>Supabase (Postgres + Auth), free tier</td><td>A real relational model with built-in authentication, at no cost</td></tr>
-        <tr><td>Security</td><td>RLS policies for each role; views set to <code>security_invoker</code></td><td>Each user sees only what their role allows, even through reporting views</td></tr>
-        <tr><td>Integrity</td><td>Generated columns for totals and wastage; owner-only update path with audit log</td><td>Calculated figures can't be typed over by hand</td></tr>
-        <tr><td>Change management</td><td>Numbered SQL migrations (001–009)</td><td>Each round of client feedback ships as a small change that can be traced back</td></tr>
-        <tr><td>Hosting &amp; backup</td><td>Cloudflare (OpenNext) from a private repo; weekly <code>pg_dump</code> via GitHub Actions</td><td>Free hosting that allows commercial use, with backups the free database tier doesn't provide</td></tr>
-      </table>
-    </div>
+    <h2>How I delivered it</h2>
+    <p>I treated the owner and the CEO as my customers and ran the project like a customer success engagement.</p>
+    <ul class="ticks">
+      <li><b>Started from the business questions.</b> Where is each order? Where are we losing pieces? What's still with vendors? Those answers shaped everything that followed.</li>
+      <li><b>Decisions in plain language.</b> I shared short documents with tick-box options and a recommended choice for each, so the owner could decide without any technical background.</li>
+      <li><b>Prototype first, then fast iteration.</b> Leadership approved a prototype first. After the demo, their feedback, including new stages, outsourcing and tighter edit rights, went into the app within days.</li>
+      <li><b>Scope set by value.</b> We focused on the production floor, where the pain was greatest, and parked the yarn-to-fabric module for later.</li>
+    </ul>
+    <div class="callout"><b>Built using AI.</b> I'm not a full-time software developer. I used AI (Claude) as my development partner to write and refine the code. My own work went into the parts that decide whether it succeeds: understanding the business, defining the rules and data, testing against real scenarios, and getting stakeholders to sign off. This let a customer-facing professional deliver a working business application quickly and at no cost.</div>
   </div>
 </section>
 
 <section>
   <div class="wrap prose">
     <h2>Where it stands</h2>
-    <p>The full cutting-to-packing workflow is built and has been demonstrated to the owner and the CEO. The rounds of changes requested after the demo are done, including units, outsourcing and tighter edit rights. The app is now in client testing, and deployment to Cloudflare comes next.</p>
-    <h3 style="margin-top:28px">What I took away</h3>
+    <p>The app has been demonstrated to the owner and the CEO, and all the changes they asked for are done. It's now in client testing ahead of going live.</p>
+    <h3 style="margin-top:28px">What this shows about how I work</h3>
     <ul class="ticks">
-      <li>Plain-language decision documents got faster and clearer answers from a non-technical owner than any technical spec would have.</li>
-      <li>Putting the rules in the database, through row-level security, generated columns and audit logs, made the app trustworthy. Hiding buttons in the interface wouldn't have.</li>
-      <li>Scoping down to the floor's biggest pain point delivered value sooner than building the whole chain first.</li>
+      <li>I start with the outcome the customer needs, not with the tool.</li>
+      <li>I use data and AI to close the gap between a business problem and a working solution.</li>
+      <li>I keep non-technical stakeholders confident by giving them clear choices and quick turnarounds.</li>
     </ul>
-    <p style="margin-top:28px;color:var(--muted)">The source code is private because the app belongs to the client. I'm happy to walk through it, or show a demo with test data, in an interview.</p>
+    <p style="margin-top:24px;color:var(--muted);font-size:.92rem">Built with Next.js, Supabase (Postgres), role-based access and Excel export. The code is private because the app belongs to the client. I'm happy to walk through it in an interview.</p>
     <div class="btns"><a class="btn primary" href="mailto:sudharshana.ravi@outlook.com">Get in touch</a><a class="btn" href="index.html">Back to portfolio</a></div>
   </div>
 </section>
